@@ -1,0 +1,54 @@
+<odoo>
+    <record id="mrp_production_form_view_inherit" model="ir.ui.view">
+        <field name="name">mrp.production.form.inherit</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='bom_div']" position="after">
+                <field name="rejected_quantity"/>
+                <field name="stock_arrete"/>
+                <field name="assembly_quantity"/>
+                <field name="total_quantity"/>
+                <field name="cut_quantity"/>
+                <field name="manquant"/>
+            </xpath>
+
+            <xpath expr="//page[@name='miscellaneous']//field[@name='origin']" position="after">
+                <field name="date_ordonnancement"/>
+            </xpath>
+
+            <xpath expr="//page[@name='miscellaneous']//field[@name='picking_type_id']" position="after">
+                <field name="facturation"/>
+            </xpath>
+
+            <xpath expr="//page[@name='miscellaneous']/group/group[2]" position="after">
+                    <group string='Other details'>
+                        <field name="cause_retard"/>
+                        <field name="facturation"/>
+                    </group>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="view_mrp_production_tree_inherit_custom" model="ir.ui.view">
+        <field name="name">mrp.production.tree.inherit.custom</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="production_date" widget="date" optional="show"/>
+                <field name="cutting_date" optional="show"/>
+                <field name="placement_comment" optional="show"/>
+                <field name="cut_quantity" optional="show"/>
+                <field name="orderly" optional="show"/>
+                <field name="compliance" optional="show"/>
+                <field name="price_sheet" filename="fiche_prix" optional="show"/>
+                <field name="customer" optional="show"/>
+                <field name="assembly_quantity" optional="hide"/>
+                <field name="total_quantity" optional="show"/>
+                <field name="manquant" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

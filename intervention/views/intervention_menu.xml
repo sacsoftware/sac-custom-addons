@@ -1,0 +1,12 @@
+<odoo>
+    <menuitem id="menu_intervention_root" name="Intervention" sequence="10"/>
+
+<menuitem id="menu_intervention_terrain" name="Intervention terrain"
+              parent="menu_intervention_root" sequence="1"/>
+
+    <menuitem id="menu_intervention_terrain_a" name="Terrain A"
+              parent="menu_intervention_terrain" action="action_intervention_terrain_a" sequence="1"/>
+
+    <menuitem id="menu_intervention_terrain_b" name="Terrain B"
+              parent="menu_intervention_terrain" action="action_intervention_terrain_b" sequence="2"/>
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_delivery_document" inherit_id="stock.report_delivery_document">
+        <xpath expr="//div[@name='div_origin']" position="after">
+             <div t-if="o.origin" class="col-auto col-3 mw-100 mb-2" name="div_netc">
+                <strong>shipping policy</strong>
+                <span t-field="o.move_type" class="m-0"/>
+                <strong>Company name</strong>
+                <span t-field="o.company_id" class="m-0"/>
+            </div>
+        </xpath>
+        <xpath expr="//table[@name='stock_move_table']/thead/tr" position="inside">
+            <th name="th_sm_reference">Reference</th>
+        </xpath>
+
+        <!-- Cellule de données -->
+        <xpath expr="//table[@name='stock_move_table']/tbody/tr" position="inside">
+            <td>
+                <span t-esc="move.product_id.default_code or ''"/>
+            </td>
+        </xpath>
+    </template>
+</odoo>
+            

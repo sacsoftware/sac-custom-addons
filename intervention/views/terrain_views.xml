@@ -1,0 +1,72 @@
+<odoo>
+    <record id="view_intervention_terrain_a_tree" model="ir.ui.view">
+        <field name="name">intervention.terrain.a.tree</field>
+        <field name="model">intervention.terrain.a</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type_terrain"/>
+                <field name="name"/>
+                <field name="date_intervention"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_intervention_terrain_a_form" model="ir.ui.view">
+        <field name="name">intervention.terrain.a.form</field>
+        <field name="model">intervention.terrain.a</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="type_terrain"/>
+                        <field name="name"/>
+                        <field name="date_intervention"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_intervention_terrain_b_tree" model="ir.ui.view">
+        <field name="name">intervention.terrain.b.tree</field>
+        <field name="model">intervention.terrain.b</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type_terrain"/>
+                <field name="name"/>
+                <field name="date_intervention"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_intervention_terrain_b_form" model="ir.ui.view">
+        <field name="name">intervention.terrain.b.form</field>
+        <field name="model">intervention.terrain.b</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="type_terrain"/>
+                        <field name="name"/>
+                        <field name="date_intervention"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+    <record id="action_intervention_terrain_a" model="ir.actions.act_window">
+        <field name="name">Terrain A</field>
+        <field name="res_model">intervention.terrain.a</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_intervention_terrain_b" model="ir.actions.act_window">
+        <field name="name">Terrain B</field>
+        <field name="res_model">intervention.terrain.b</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    
+</odoo>

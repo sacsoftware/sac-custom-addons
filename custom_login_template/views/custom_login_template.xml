@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="custom_login_template" inherit_id="web.login">
+    <xpath expr="//div[contains(@class, 'o_login_auth')]" position="inside">
+        <div class="custom-login-header" style="text-align: center; margin-bottom: 20px;">
+            <img src="/custom_login_template/static/src/img/logo-sac.png"
+                 style="max-width: 150px; margin-bottom: 10px;" />
+            <h2 style="color: #4518ee; font-family: 'Segoe UI', sans-serif;">
+                SACSOFTWARE/NETC
+            </h2>
+        </div>
+    </xpath>
+    </template>
+</odoo>
