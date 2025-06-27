@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report 
+        id="action_report_fiche_produit"
+        model="mrp.bom"
+        string="Fiche Produit"
+        report_type="qweb-pdf"
+        name="sac_description_sale.report_fiche_produit"
+        file="sac_description_sale.report_fiche_produit"
+        print_report_name="'Fiche_Produit_' + object.product_tmpl_id.name"/>
+</odoo>

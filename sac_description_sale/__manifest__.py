@@ -8,6 +8,8 @@
              'views/product_template_views.xml',
              'views/mrp_production_views.xml',
              'views/mrp_bom_views.xml',
+             'report/fiche_produit_template.xml',
+             'report/fiche_produit_report.xml',
              ],
     'installable': True,
     'auto_install': False,

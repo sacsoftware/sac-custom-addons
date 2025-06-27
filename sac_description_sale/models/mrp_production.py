@@ -22,6 +22,15 @@ class MrpProduction(models.Model):
     assembly_quantity=fields.Integer(string="Assembled quantity")
     total_quantity=fields.Integer(string="Total quantity" , compute='compute_total_quantity' , store=True)
     manquant=fields.Text(string="Manquant", compute="compute_manquant", store=True)
+    confirmation = fields.Selection(
+        selection=[
+            ("not_confirmed", "Pas Encore Confirmé"),
+            ("confirm_manually", "Confirmé Manuellement")
+            ],
+            string="Confirmation",
+            default="not_confirmed",
+            required=True
+            )
 
 
 
@@ -41,4 +50,10 @@ class MrpProduction(models.Model):
                         if float_compare(move.forecast_availability, 0 if move.state == 'draft' else move.product_qty, precision_rounding=move.product_id.uom_id.rounding) == -1:
                             list_manquant.append (move.product_id.display_name)
             production.manquant = ','.join(list_manquant)
+
+    def action_confirm(self):
+        res = super().action_confirm()
+        for record in self:
+            record.confirmation = 'confirm_manually'
+        return res
             
